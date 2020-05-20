@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex>
+      <app-dashboard-nav></app-dashboard-nav>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="17" class="menu">
+    <app-dashboard-menu></app-dashboard-menu>
+  </div>
+  <div fxFlex class="contenedor">            
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex class="title">                                
+                <p>Imagen de Perfil</p>                
+            </div>             
+        </div>
+        <mat-card fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30" class="actualImagen text-center">
+                <img src="{{url+'imageUser/'+identity.imageProfile}}" alt="" style="width: 80%;border-radius: 50%;" *ngIf="identity.imageProfile!=null">        
+                <img src="/assets/noImagenProfile.png" alt="" style="width: 80%;border-radius: 50%;" *ngIf="identity.imageProfile==null">        
+                <label for="img-upload" class=" mt-3 text-white bg-primary p-2 rounded mt-2">Seleccionar Nueva Imagen</label>
+                <input type="file" id="img-upload" (change)="fileChangeEvent($event)">                            
+            </div> 
+            <div fxFlex="30" *ngIf="filesToUpload" class="text-center">
+                <img src="/assets/flecha.png" alt="flecha" style="width: 80%">
+            </div>
+            <div fxFlex="30" class="selectImagen text-center" *ngIf="filesToUpload">                
+                <img *ngIf="source" [src]="source" src="" id="imgMuestra" style="width: 80%;border-radius: 50%;">
+                <button mat-raised-button class="bg-success text-white mt-2" (click)="updateImageProfile()">Guardar Imagen</button>
+            </div>
+        </mat-card>
+  </div>  
+</div>

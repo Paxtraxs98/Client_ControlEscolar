@@ -1,0 +1,105 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
+    <div fxFlex>
+        <mat-toolbar>           
+            <mat-toolbar-row>
+              <img [routerLink]="['../']" routerLinkActive="router-link-active"   src="/assets/logo-Blanco.png" alt="" style="cursor: pointer;">
+              <span class="spacer"></span>
+              <ul>
+                  <li><button mat-button >Colegiaturas</button></li>
+                  <li><button mat-button >Correo ISIMA</button></li>
+                  <li><button mat-button >Servicios en linea</button></li>
+                  <li><button mat-button [matMenuTriggerFor]="menu">
+                    Ayuda
+                    <span class="material-icons">
+                      arrow_drop_down
+                    </span>
+                  </button></li>
+              </ul>
+            </mat-toolbar-row>
+          </mat-toolbar>          
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>question_answer</mat-icon>
+              <span>Preguntas Frecuentes</span>
+            </button>
+            <button mat-menu-item >
+              <mat-icon>group</mat-icon>
+              <span>Comunidad ISIMA</span>
+            </button>            
+          </mat-menu>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="contendorLogin">
+  <div fxFlex="40" class="imgLogin">
+    <img src="/assets/estudiante.png" alt="estudiante">
+  </div>
+  <div fxFlex="25" class="contenedorFormulario">
+    <form [formGroup]="FormLogin" (ngSubmit)="onSubmit()">
+      <div>
+        <p>Ingresa aquí</p>
+      </div>
+      <div class="separador">        
+      </div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input 
+        matInput
+        formControlName="email">      
+        <mat-hint *ngIf="FormLogin.get('email').hasError('email')">
+          *Email Invalido
+        </mat-hint>
+        <mat-hint *ngIf="FormLogin.get('email').touched && FormLogin.get('email').hasError('required')">
+          *Email Requerido
+        </mat-hint>
+      </mat-form-field>      
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input 
+        type="password"
+        matInput 
+        formControlName="password" >      
+        <mat-hint *ngIf="FormLogin.get('password').touched && FormLogin.get('password').hasError('required')">
+          *Password Requerido
+        </mat-hint>
+      </mat-form-field>     
+      <button 
+      mat-raised-button
+      [disabled]="FormLogin.invalid"
+      >Iniciar Sesion</button>
+      <div class="passwordOlvidado">
+        <a href="">Ha olvidado su contraseña???</a>
+      </div>
+    </form>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class="servicios"> 
+  <div fxFlex class="servicio" style="background-color: #5CB85C;">
+    <p class="servicioTitle">COMUNIDAD</p>
+    <p class="servicioContent">¡Únete a la conversación! Aclara tus dudas y comenta con otros usuarios todas tus inquietudes acerca de la vida universitaria. </p>    
+  </div> 
+  <div fxFlex class="servicio" style="background-color:#3fa7f3 ;">
+    <p class="servicioTitle">SERVICIOS EN LINEA</p>
+    <p class="servicioContent">Aquí podrás obtener información valiosa como: tu tira de materias, avance porcentual de tu carrera, etc. </p>    
+  </div> 
+  <div fxFlex class="servicio" style="background-color: #ff911e;">
+    <p class="servicioTitle">AYUDA</p>
+    <p class="servicioContent">Escríbenos para que un asesor especializado te ofrezca la información que requieres así como más posibilidades para realizar tus estudios.</p>    
+  </div>   
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class="footer">
+  <div fxFlex="90">        
+       <div fxLayout="row" fxLayoutAlign="center center">
+           <div fxFlex class="infoFooter">                        
+                   <span>Grupo ISIMA Sistemas y Posgrados Sa de CV, Toluca Edo.Mexico 2020.</span>                                         
+           </div>
+           <div fxFlex class="redesSociales">        
+               <ul>
+                   <li><i class="fab fa-facebook-f"></i></li>
+                   <li><i class="fab fa-youtube"></i></li>
+                   <li><i class="fab fa-instagram"></i></li>             
+               </ul>
+           </div>           
+       </div>
+  </div>
+</div>

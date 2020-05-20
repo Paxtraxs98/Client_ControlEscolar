@@ -1,0 +1,32 @@
+.contenedor
+{
+    padding: 30px;
+    height: 89vh;
+    background-color: #f6f7fb;
+}
+.title p
+{
+    font-size: 35px;
+    color: rgba(0, 0, 0, .6);
+}
+mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+table 
+{
+    width: 100%;
+}  
+td
+{
+    font-size: 14px;    
+    text-align: center;    
+}
+.action button
+{
+  margin-right: 8px;
+}
+.menu
+{
+    box-shadow: 2px 0 2.94px .06px rgba(4,26,55,.16); z-index: 10; overflow-y: hidden;
+}

@@ -1,0 +1,117 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
+    <div fxFlex>
+      <app-dashboard-nav></app-dashboard-nav>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="17" class="menu">
+    <app-dashboard-menu></app-dashboard-menu>
+  </div>
+  <div fxFlex class="contenedor">     
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex class="title">            
+                <p *ngIf="!isEdit">Agregar Usuario</p>
+                <p *ngIf="isEdit">Editar Datos del Usuario</p>                
+            </div>        
+        </div>        
+        <mat-card>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <div fxFlex="100" class="UsersForm">            
+                        <form action=""  [formGroup]="FormSaveAlumno" (ngSubmit)="onSaveUser()">
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <div fxFlex>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Nombre(s)</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="name">
+                                        <mat-icon matSuffix>mode_edit</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Apellido Paterno</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="surnameP">
+                                        <mat-icon matSuffix>mode_edit</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Apellido Materno</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="surnameM">
+                                        <mat-icon matSuffix>mode_edit</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <div fxFlex>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Direccion</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="address">
+                                        <mat-icon matSuffix>house</mat-icon>
+                                    </mat-form-field>                        
+                                </div>                
+                                <div fxFlex="30">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Telefono</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="phone">
+                                        <mat-icon matSuffix>phone</mat-icon>
+                                    </mat-form-field>                        
+                                </div>
+                                <div fxFlex *ngIf="identity.typeOfUsers.name=='Administrativo'">
+                                    <mat-form-field>
+                                        <mat-label>Licenciatura</mat-label>
+                                        <mat-select formControlName="specialite">
+                                          <mat-option *ngFor="let specialite of specialites" [value]="specialite._id">
+                                            {{specialite.name}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <div fxFlex>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>E-mail</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="email">
+                                        <mat-icon matSuffix>email</mat-icon>
+                                    </mat-form-field>                        
+                                </div>
+                                <div fxFlex *ngIf="isEdit && identity.typeOfUsers.name=='Alumno'">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Password</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="password">
+                                        <mat-icon matSuffix>email</mat-icon>
+                                    </mat-form-field>                        
+                                </div>                
+                                <div fxFlex="30" >
+                                    <button 
+                                    mat-raised-button 
+                                    color="primary"
+                                    [disabled]="FormSaveAlumno.invalid" 
+                                    style="width: 40%; margin-right: 5px;">Guardar</button>
+                                    <button 
+                                    mat-raised-button 
+                                    color="warn"                                    
+                                    style="width: 40%;" (click)="regresar()">Regresar</button>
+                                </div>
+                            </div>    
+                            
+                        </form>            
+                </div>
+            </div>
+        </mat-card>    
+  </div>  
+</div>

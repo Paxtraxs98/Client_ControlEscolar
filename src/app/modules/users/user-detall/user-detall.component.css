@@ -1,0 +1,46 @@
+.contenedor
+{
+    padding: 30px;
+    height: 89vh;
+    background-color: #f6f7fb;
+    overflow-y: scroll;
+}
+.title p,.kardex p
+{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, .5);
+}
+.imgAlumno
+{
+    text-align: center;    
+}
+.imgAlumno img
+{
+    width: 100%;
+    border-radius: 20px;
+}
+.infoAlumno ul li
+{
+    list-style: none;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.infoAlumno ul li span{
+    color: red;
+    font-weight: bolder;
+}
+
+table 
+{
+    width: 100%;
+}  
+td
+{
+    font-size: 14px;    
+    text-align: center;    
+}
+.menu
+{
+    box-shadow: 2px 0 2.94px .06px rgba(4,26,55,.16); z-index: 10; overflow-y: hidden;
+}

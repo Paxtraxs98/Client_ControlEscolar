@@ -1,0 +1,19 @@
+.contenedor
+{
+    background-color: #f6f7fb;
+    padding: 30px;
+    height: 89vh;
+}
+.title p
+{
+    font-size: 35px;
+    color: rgba(0, 0, 0, .6);
+}
+#img-upload
+{
+    display: none;
+}
+.menu
+{
+    box-shadow: 2px 0 2.94px .06px rgba(4,26,55,.16); z-index: 10; overflow-y: hidden;
+}

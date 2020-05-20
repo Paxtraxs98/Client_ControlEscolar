@@ -1,0 +1,249 @@
+
+*{
+    padding: 0px;
+    margin: 0px;    
+    width: 100%;    
+}
+
+
+.slide
+{
+    height: 570px;    
+    overflow: hidden;    
+}
+
+.infoSchool
+{
+    margin-top: 30px;
+    padding: 20px;
+    /* background-color: rgb(243, 243, 243); */
+}
+.infoSchool .bordes
+{
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+.infoSchool img
+{
+    height: 350px;
+}
+.shadow
+{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.infoSchool .contenedorInfo
+{
+    padding: 10px;
+}
+.infoSchool .contenedorInfo .title
+{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8);
+}
+.infoSchool .contenedorInfo .info
+{
+    text-align: justify;
+    font-size: 18px;
+    color:rgba(0,0,0,.5)
+}
+
+.beneficios
+{
+    margin-top: 50px;
+}
+.beneficios .titleBeneficios
+{
+    font-size: 28px;
+    color: rgba(0,0,0,.7);
+    text-align: center;
+    font-family: Roboto;
+}
+.beneficios .textBeneficios
+{
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    font-family: Roboto;
+    line-height: 28px
+}
+.beneficios .infoBeneficios
+{
+    margin-top: 30px;    
+    padding: 25px;
+}
+.beneficios .infoBeneficios .beneficio
+{    
+    margin: 5px;
+    text-align: center;        
+}
+.beneficios .infoBeneficios .beneficio mat-icon
+{
+    font-size: 35px;
+    color: #006fba;
+    /* color: rgb(7, 33, 70);     */
+    border-bottom: 1px solid rgb(7, 33, 70);    
+}
+.beneficios .infoBeneficios .beneficio p
+{
+    font-size: 20px;
+    color: rgba(0,0,0,.5);
+}
+
+.classOnline
+{
+    margin-top: 50px;
+}
+.classOnline .titleOnline
+{
+    font-size: 28px;
+    color: rgba(0,0,0,.7);
+    text-align: center;
+    font-family: Roboto;
+}
+.classOnline .textOnline
+{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(117, 117, 117);
+    font-family : Roboto, sans-serif;
+    font-size:18px;
+    line-height: 28px
+}
+.classOnline .contenedorFormaInscripcion 
+{
+    padding: 20px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.22);
+}
+.classOnline .formaDeInscripcion
+{
+    margin-top: 35px;
+}
+.classOnline .formaDeInscripcion .titleFormaDeInscripcion
+{
+    color: #006fba;
+    /* color: rgb(7, 33, 70);     */
+    font-family: Roboto, sans-serif;
+    font-size: 24px
+}
+.classOnline .formaDeInscripcion .descripcionFormaDeInscripcion
+{
+    margin-top: 10px;
+    color: #757575;
+    font-family : Roboto, sans-serif;
+    font-size:16px;
+    line-height: 28px
+}
+.classOnline .formaDeInscripcion .opcionesFormaDeInscripcion ul
+{
+    margin-top: 10px;
+    padding: 5px;
+}
+.classOnline .formaDeInscripcion .opcionesFormaDeInscripcion ul li
+{
+    margin-top: 10px;
+    color: #757575;
+    font-family : Roboto, sans-serif;
+    font-size:16px;
+    line-height: 28px
+}
+.classOnline .formaDeInscripcion  .btnInscripcion button
+{
+    margin-top: 5px;
+}
+
+.consultas
+{
+    margin-top: 50px;
+}
+.consultas .titleConsultas
+{
+    font-size: 28px;
+    color: rgba(0,0,0,.7);
+    text-align: center;
+    font-family: Roboto;
+}
+.consultas .textConsultas
+{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(117, 117, 117);
+    font-family : Roboto, sans-serif;
+    font-size:18px;
+    line-height: 28px
+}
+.consultas .contendidoConsultas
+{
+    margin-top: 25px;
+}
+.consultas .contendidoConsultas .consulta
+{
+    padding: 10px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.22);
+    margin:10px;
+    height: 250px;
+}
+.consultas .contendidoConsultas .titleContenidoConsultas
+{
+    font-size: 24px;
+    color: rgba(0,0,0,.7);
+    text-align: center;
+    font-family: Roboto;
+}
+.consultas .contendidoConsultas .textContenidoConsultas
+{
+    margin-top: 10px;
+    text-align: justify;
+    color: rgb(117, 117, 117);
+    font-family : Roboto, sans-serif;
+    font-size:16px;        
+    height: 140px;
+}
+.consulta button
+{
+
+}
+/* .consultas .contendidoConsultas .iconContenidoConsultas
+{
+    color: #006fba;
+    /* color: rgb(7, 33, 70);    
+    text-align: center;
+    font-size: 18px;
+} */
+
+@media (max-width: 700px) {  
+    .toolbar {
+      height: auto;
+    }
+    .toolbar .toolbarImg button
+    {
+        display: block;
+    }
+    .toolbarOpciones
+    {
+        display: none;
+        padding: 5px;
+    }
+    .toolbarOpciones ul li
+    {
+        text-align: right;
+        padding: 10px;        
+        display: block;
+    }
+
+    .slide
+    {
+        height: auto;
+    }
+
+    .infoSchool .imgInfo
+    {
+        display: none;
+    }
+  }
+
+  
+
+

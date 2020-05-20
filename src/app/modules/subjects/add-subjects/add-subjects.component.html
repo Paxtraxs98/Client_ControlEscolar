@@ -1,0 +1,83 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
+    <div fxFlex>
+      <app-dashboard-nav></app-dashboard-nav>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="17" class="menu">
+    <app-dashboard-menu></app-dashboard-menu>
+  </div>
+  <div fxFlex class="contenedor">     
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex class="title">            
+                <p *ngIf="!isEdit">Agregar Materia</p>
+                <p *ngIf="isEdit">Editar Materia</p>                
+            </div>        
+        </div>        
+        <mat-card>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <div fxFlex="100" class="subjectsForm">            
+                        <form action=""  [formGroup]="FormSubject" (ngSubmit)="onSubmit()">                   
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <div fxFlex>
+                                    <mat-form-field>
+                                        <mat-label>Nombre de la Materia</mat-label>
+                                        <input 
+                                        matInput
+                                        formControlName="name">
+                                        <mat-icon matSuffix>keyboard</mat-icon>
+                                    </mat-form-field>                        
+                                </div>                                                                                
+                            </div> 
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <div fxFlex>
+                                    <mat-form-field>
+                                        <mat-label>Grado de la materia</mat-label>
+                                        <mat-select formControlName="grade">
+                                            <mat-option value="1">1</mat-option>
+                                            <mat-option value="2">2</mat-option>
+                                            <mat-option value="3">3</mat-option>
+                                            <mat-option value="4">4</mat-option>
+                                            <mat-option value="5">5</mat-option>
+                                            <mat-option value="6">6</mat-option>
+                                            <mat-option value="7">7</mat-option>
+                                            <mat-option value="8">8</mat-option>
+                                            <mat-option value="9">9</mat-option>
+                                            <mat-option value="10">10</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>                        
+                                </div>                                                
+                                <div fxFlex>
+                                    <mat-form-field>
+                                        <mat-label>Licenciatura</mat-label>
+                                        <mat-select formControlName="specialite">
+                                          <mat-option *ngFor="let specialite of specialites" [value]="specialite._id">
+                                            {{specialite.name}}
+                                          </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>                     
+                                </div>                                                                                       
+                                <div fxFlex="30">
+                                    <button 
+                                    mat-raised-button 
+                                    color="primary"
+                                    [disabled]="FormSubject.invalid" 
+                                    style="width: 40%; margin-right: 5px;">Guardar</button>
+                                    <button 
+                                    mat-raised-button 
+                                    color="warn"                                    
+                                    style="width: 40%;"
+                                    [routerLink]="['../']" routerLinkActive="router-link-active" *ngIf="!isEdit">Regresar</button>                                    
+                                    <button 
+                                    mat-raised-button 
+                                    color="warn"                                    
+                                    style="width: 40%;"
+                                    [routerLink]="['../../']" routerLinkActive="router-link-active" *ngIf="isEdit">Regresar</button>
+                                </div>
+                            </div>                               
+                        </form>            
+                </div>
+            </div>
+        </mat-card>    
+  </div>  
+</div>

@@ -1,0 +1,24 @@
+.footer
+{
+    background-color: rgb(39, 39, 39);
+    /* background-color: rgb(7, 33, 70); */
+    padding: 5px;
+}
+.footer .infoFooter span
+{
+    color: rgba(255, 255, 255, .6);
+}
+.footer .redesSociales
+{
+    text-align: right;
+}
+.footer .redesSociales ul
+{
+    margin-top: 10px;
+}
+.footer .redesSociales ul li
+{
+    color: white;
+    display: inline-block;
+    margin: 10px;
+}

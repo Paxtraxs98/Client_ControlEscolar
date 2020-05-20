@@ -1,0 +1,133 @@
+.toolbar mat-toolbar
+{
+    /* background-color: #006fba; */
+    background-color: rgb(7, 33, 70);
+}
+.toolbar img
+{
+    height: 70%;
+}
+.toolbar ul
+{
+    margin-top: 15px;    
+}
+.toolbar ul li
+{
+    display: inline-block;   
+}
+.toolbar mat-toolbar button
+{
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+.contendorLogin
+{
+    height: 500px;
+    background-image: url('/assets/bg-login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contendorLogin .imgLogin img
+{
+    height: 500px;
+}
+.contenedorFormulario
+{
+    background-color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 25px;
+}
+.separador
+{
+    border-bottom: 1px solid rgb(240, 173, 78);
+    margin-bottom: 20px;
+}
+.contenedorFormulario p
+{
+    font-size: 25px;
+    color: #006fba;
+    font-weight: bold;
+}
+.contenedorFormulario mat-form-field
+{
+    width: 90%;
+}
+
+.contenedorFormulario mat-hint
+{
+    width: 100%;
+    text-align: left;
+    color:red;
+    font-size: 10px;
+}
+.contenedorFormulario button
+{
+    background-color: rgb(240, 173, 78);
+    color: white;
+}
+.contenedorFormulario .passwordOlvidado
+{
+    margin-top: 20px;    
+}
+.contenedorFormulario .passwordOlvidado a
+{
+    color: rgba(0,0,0,.5);
+    font-size: 14px;
+}
+
+.servicios
+{
+    height: 200px;
+}
+.servicios .servicio
+{
+    padding: 30px;
+    height: 100%;
+}
+.servicios .servicio .servicioTitle
+{
+    color: white;
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+}
+.servicios .servicio .servicioTitle:hover
+{
+    text-decoration: underline;
+}
+.servicios .servicio .servicioContent
+{
+    font-size: 16px;
+    color: white;
+}
+
+.footer
+{
+    /* background-color: rgb(39, 39, 39); */
+    background-color: rgb(7, 33, 70);
+    padding: 0px;
+}
+.footer .infoFooter span
+{
+    color: rgba(255, 255, 255, .6);
+}
+.footer .redesSociales
+{
+    text-align: right;
+}
+.footer .redesSociales ul
+{
+    margin-top: 10px;
+}
+.footer .redesSociales ul li
+{
+    color: white;
+    display: inline-block;
+    margin: 10px;
+}

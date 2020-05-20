@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" class="toolbar">  
+        <div fxFlex="10" class="toolbarImg">        
+            <img src="/assets/logo.png" alt="logo">                    
+            <button mat-icon-button (click)="mostrar()" id="openMenu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-icon-button (click)="ocultar()" id="closeMenu">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div fxFlex="50" class="toolbarOpciones" id="toolbarOpc" >
+            <ul>
+                <li [routerLink]="['']" >Quienes Somos</li>
+                <li [routerLink]="['/Planteles']" routerLinkActive="router-link-active">Planteles</li>
+                <li [routerLink]="['/Oferta-Educativa']" routerLinkActive="router-link-active" >Oferta Educativa</li>
+                <li [routerLink]="['/portal-ISIMA']" routerLinkActive="router-link-active">Portal</li>
+                <li [routerLink]="['/Contactos']" routerLinkActive="router-link-active" >Contactos</li>
+            </ul>
+        </div>    
+</div>  
+

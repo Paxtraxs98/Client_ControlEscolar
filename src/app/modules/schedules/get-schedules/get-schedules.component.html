@@ -1,0 +1,73 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
+    <div fxFlex>
+      <app-dashboard-nav></app-dashboard-nav>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="17" class="menu">
+    <app-dashboard-menu></app-dashboard-menu>
+  </div>
+  <div fxFlex class="contenedor"> 
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex class="title">
+            <p>Horarios Disponibles</p>  
+        </div>
+        <div fxFlex style="text-align: right;">
+          <button mat-raised-button class="bg-success text-white" [routerLink]="['AddSchedule']" routerLinkActive="router-link-active" >Agregar Horario</button>
+          <button mat-raised-button class="bg-danger ml-1 text-white" (click)="eliminarTodos()" >Eliminar Horarios</button>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="90">
+          <mat-form-field>            
+            <input matInput (keyup)="applyFilter($event)" placeholder="No funciona y ordenar datos">
+          </mat-form-field>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">            
+            <ng-container matColumnDef="materia" >
+              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Materia </th>
+              <td mat-cell *matCellDef="let element"> {{element.subject.name}}  </td>
+            </ng-container>                        
+            <ng-container matColumnDef="licenciatura" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Licenciatura </th>
+                <td mat-cell *matCellDef="let element"> {{element.subject.specialite.name}}  </td>
+              </ng-container>
+            <ng-container matColumnDef="cuatrimestre" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Cuatrimestre </th>
+                <td mat-cell *matCellDef="let element"> {{element.subject.grade}}  </td>
+              </ng-container>                                               
+            <ng-container matColumnDef="dias" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Dias </th>
+                <td mat-cell *matCellDef="let element"> {{element.days}}  </td>
+              </ng-container>                       
+            <ng-container matColumnDef="horario" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Horario </th>
+                <td mat-cell *matCellDef="let element"> {{element.schedule}}  </td>
+            </ng-container>                       
+            <ng-container matColumnDef="salon" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Salon </th>
+                <td mat-cell *matCellDef="let element"> {{element.classroom}}  </td>
+            </ng-container>                       
+            <ng-container matColumnDef="maestro" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Maestro </th>
+                <td mat-cell *matCellDef="let element"> {{element.teacher.name}} {{element.teacher.surnameP}}  </td>
+            </ng-container>                       
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Acciones </th>
+              <td mat-cell *matCellDef="let element"> 
+                <div class="action">                                    
+                  <button mat-raised-button class="bg-primary text-white" [routerLink]="['EditSchedule/',element._id]" routerLinkActive="router-link-active" >Editar</button>                                      
+                  <button mat-raised-button class="bg-danger text-white" (click)="eliminar(element._id)" routerLinkActive="router-link-active" >Eliminar</button>                                      
+                </div>  
+              </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+    </div>
+  </div>
+  <div fxFlex class="contenedor" *ngIf="identity.typeOfUsers.name!='Administrativo'">
+    No tienes los privilegios suficientes
+  </div>  
+</div>

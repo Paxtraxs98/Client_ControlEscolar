@@ -17,7 +17,15 @@ const routes: Routes = [
   {
     path : 'Subjects',
     loadChildren : '../subjects/subjects.module#SubjectsModule'
-  } 
+  },
+  {
+    path : 'Specialites',
+    loadChildren : '../specialites/specialites.module#SpecialitesModule'
+  },
+  {
+    path:'Schedules',
+    loadChildren : '../schedules/schedules.module#SchedulesModule'
+  }
 ];
 
 @NgModule({

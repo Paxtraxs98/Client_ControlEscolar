@@ -1,0 +1,28 @@
+.contenedor
+{
+    background-color: #f6f7fb;
+    padding: 30px;
+    height: 89vh;
+}
+.title p
+{
+    font-size: 35px;
+    color: rgba(0, 0, 0, .6);
+}
+.scheduleForm
+{    
+    text-align: center;
+}
+.scheduleForm mat-icon
+{
+    color: rgba(0, 0, 0, .6);
+}
+.scheduleForm mat-form-field
+{
+    width: 100%;
+    padding: 5px;    
+}
+.menu
+{
+    box-shadow: 2px 0 2.94px .06px rgba(4,26,55,.16); z-index: 10; overflow-y: hidden;
+}

@@ -16,7 +16,8 @@ export class GetSchedulesComponent implements OnInit {
 
   public identity;
   public dataSource;
-  displayedColumns: string[] = ['materia','licenciatura','cuatrimestre', 'dias', 'horario','salon','maestro','action'];  
+  public lng //tamaño de la datasource
+  displayedColumns: string[] = ['materia','licenciatura','cuatrimestre', 'dias', 'horario','action'];  
 
   constructor(
     private _localStorageService:LocalStorageService,
@@ -37,6 +38,7 @@ export class GetSchedulesComponent implements OnInit {
       this._scheduleService.getSchedule().subscribe(
         (response:any)=>{          
           this.dataSource = new MatTableDataSource(response.schedules);         
+          this.lng = this.dataSource._data._value.length;          
         },error=>{
           console.log(error)
         }

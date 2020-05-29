@@ -13,8 +13,8 @@ import { SubjectsServiceService } from '../../../services/apiService/subjects-se
 })
 export class AddSubjectsComponent implements OnInit {
   public FormSubject:FormGroup;
-  public specialites
-
+  public specialites=[];
+  public auxiliar;
   constructor(
     private _specialiteService:SpecialiteService,
     private _subjectService:SubjectsServiceService,
@@ -34,8 +34,14 @@ export class AddSubjectsComponent implements OnInit {
   getSpecialites()
   {
     this._specialiteService.getSpecialite().subscribe(
-      (response:any)=>{
-        this.specialites=response.specialites;        
+      (response:any)=>{        
+        this.auxiliar=response.specialites;
+        for (const i in this.auxiliar) {          
+          if(this.auxiliar[i].status===true){
+            this.specialites.push(this.auxiliar[i]);                        
+          }
+        }        
+        
       },error=>{
         console.log(error)
       }

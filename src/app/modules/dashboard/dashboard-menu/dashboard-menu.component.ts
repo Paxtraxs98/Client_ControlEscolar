@@ -19,8 +19,7 @@ export class DashboardMenuComponent implements OnInit {
 
   ngOnInit() {
     this._typeService.getTypeUSer().subscribe(
-      (response:any)=>{   
-        console.log(response)     
+      (response:any)=>{           
         this.alumno=response.getType[2]._id
         this.profesor=response.getType[0]._id
         this.administrativo=response.getType[1]._id

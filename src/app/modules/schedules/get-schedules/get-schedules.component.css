@@ -17,6 +17,9 @@ table
 {
     width: 100%;
 }
+/* th{
+    width: 40px;
+} */
 td
 {
     font-size: 14px;    
@@ -24,7 +27,7 @@ td
 }
 .action button
 {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 .menu
 {

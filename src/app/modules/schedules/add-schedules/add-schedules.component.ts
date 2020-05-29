@@ -18,7 +18,8 @@ export class AddSchedulesComponent implements OnInit {
 
   public FormSchedule:FormGroup;  
   public teachers;
-  public subjects;
+  public subjects=[];
+  public auxiliar
 
   constructor(
     private _scheduleService:ScheduleService,
@@ -43,7 +44,13 @@ export class AddSchedulesComponent implements OnInit {
   getSubjects(){
     this._subjectService.getSubjects().subscribe(
       (response:any)=>{
-        this.subjects=response.subjectSearch        
+        // this.subjects=response.subjectSearch        
+        this.auxiliar=response.subjectSearch;        
+        for (const i in this.auxiliar) {                    
+          if(this.auxiliar[i].status===true){            
+            this.subjects.push(this.auxiliar[i]);                        
+          }
+        }        
       },error=>{
         console.log(error)
       }

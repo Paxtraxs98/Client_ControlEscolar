@@ -7,11 +7,12 @@ import { LocalStorageService } from '../../../services/system/local-storage.serv
 import Swal from 'sweetalert2'
 
 @Component({
-  selector: 'app-dashboard-nav',
-  templateUrl: './dashboard-nav.component.html',
-  styleUrls: ['./dashboard-nav.component.css']
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.css']
 })
-export class DashboardNavComponent implements OnInit {
+export class ToolbarComponent implements OnInit {
+
   public url;
   public identity;
   public tipo
@@ -41,5 +42,6 @@ export class DashboardNavComponent implements OnInit {
         this._router.navigate(['portal-ISIMA']); 
         });
   }
+
 
 }

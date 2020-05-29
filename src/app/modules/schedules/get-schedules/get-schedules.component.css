@@ -1,9 +1,15 @@
+mat-drawer{
+    width: 270px;
+}
+mat-drawer-container{
+    height: 89vh;    
+}
 .contenedor
 {
     padding: 30px;
-    height: 89vh;
+    height: auto;
     background-color: #f6f7fb;
-    overflow-y: scroll;
+    
 }
 .title p{
     font-size: 35px;
@@ -17,13 +23,14 @@ table
 {
     width: 100%;
 }
-/* th{
-    width: 40px;
-} */
+th{
+    width: auto;    
+    padding: 3px;
+}
 td
 {
     font-size: 14px;    
-    text-align: center;    
+    text-align: center;        
 }
 .action button
 {

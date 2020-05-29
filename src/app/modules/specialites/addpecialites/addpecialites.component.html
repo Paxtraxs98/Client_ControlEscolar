@@ -1,49 +1,47 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
-    <div fxFlex>
-      <app-dashboard-nav></app-dashboard-nav>
-    </div>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex="17" class="menu">
-    <app-dashboard-menu></app-dashboard-menu>
-  </div>
-  <div fxFlex class="contenedor">     
-        <div fxLayout="row" fxLayoutAlign="center center">
-            <div fxFlex class="title">            
-                <p *ngIf="!isEdit">Agregar Licenciatura</p>
-                <p *ngIf="isEdit">Editar Licenciatura</p>                
-            </div>        
-        </div>        
-        <mat-card>
+<app-toolbar></app-toolbar>
+<mat-drawer-container>
+    <mat-drawer  mode="side" opened>
+        <app-options></app-options>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div fxFlex class="contenedor">     
             <div fxLayout="row" fxLayoutAlign="center center">
-                <div fxFlex="100" class="SpecialiteForm">            
-                        <form action=""  [formGroup]="FormSpecialite" (ngSubmit)="onSubmit()">
-                            <div fxLayout="row" fxLayoutAlign="center center">
-                                <div fxFlex>
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>Nombre de la Licenciatura</mat-label>
-                                        <input 
-                                        matInput
-                                        formControlName="name">
-                                        <mat-icon matSuffix>mode_edit</mat-icon>
-                                    </mat-form-field>
-                                </div>                     
-                                <div fxFlex="30" >
-                                    <button 
-                                    mat-raised-button 
-                                    color="primary"
-                                    [disabled]="FormSpecialite.invalid" 
-                                    style="width: 40%; margin-right: 5px;">Guardar</button>
-                                    <button 
-                                    mat-raised-button 
-                                    color="warn"                                    
-                                    style="width: 40%;" (click)="regresar()">Regresar</button>
-                                </div>
-                            </div>    
-                            
-                        </form>            
+                <div fxFlex class="title">            
+                    <p *ngIf="!isEdit">Agregar Licenciatura</p>
+                    <p *ngIf="isEdit">Editar Licenciatura</p>                
+                </div>        
+            </div>        
+            <mat-card>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxFlex="100" class="SpecialiteForm">            
+                            <form action=""  [formGroup]="FormSpecialite" (ngSubmit)="onSubmit()">
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div fxFlex>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Nombre de la Licenciatura</mat-label>
+                                            <input 
+                                            matInput
+                                            formControlName="name">
+                                            <mat-icon matSuffix>mode_edit</mat-icon>
+                                        </mat-form-field>
+                                    </div>                     
+                                    <div fxFlex="30" >
+                                        <button 
+                                        mat-raised-button 
+                                        color="primary"
+                                        [disabled]="FormSpecialite.invalid" 
+                                        style="width: 40%; margin-right: 5px;">Guardar</button>
+                                        <button 
+                                        mat-raised-button 
+                                        color="warn"                                    
+                                        style="width: 40%;" (click)="regresar()">Regresar</button>
+                                    </div>
+                                </div>    
+                                
+                            </form>            
+                    </div>
                 </div>
-            </div>
-        </mat-card>    
-  </div>  
-</div>
+            </mat-card>    
+        </div>  
+    </mat-drawer-content>
+</mat-drawer-container>

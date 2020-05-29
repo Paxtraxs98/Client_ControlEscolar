@@ -1,90 +1,88 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
-    <div fxFlex>
-      <app-dashboard-nav></app-dashboard-nav>
-    </div>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex="17" class="menu">
-    <app-dashboard-menu></app-dashboard-menu>
-  </div>
-  <div fxFlex class="contenedor">     
-        <div fxLayout="row" fxLayoutAlign="center center">
-            <div fxFlex class="title">            
-                <p *ngIf="!isEdit">Agregar Horario</p>
-                <p *ngIf="isEdit">Editar Horario</p>                
-            </div>        
-        </div>        
-        <mat-card>
+<app-toolbar></app-toolbar>
+<mat-drawer-container>
+    <mat-drawer  mode="side" opened>
+        <app-options></app-options>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div fxFlex class="contenedor">     
             <div fxLayout="row" fxLayoutAlign="center center">
-                <div fxFlex="100" class="scheduleForm">            
-                        <form action=""  [formGroup]="FormSchedule" (ngSubmit)="onSubmit()">                            
-                            <div fxLayout="row" fxLayoutAlign="center center">
-                                <div fxFlex>
-                                    <mat-form-field>
-                                        <mat-label>Materia</mat-label>
-                                        <mat-select formControlName="subject">
-                                            <mat-option *ngFor="let subject of subjects" [value]="subject._id">
-                                            {{subject.name}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
+                <div fxFlex class="title">            
+                    <p *ngIf="!isEdit">Agregar Horario</p>
+                    <p *ngIf="isEdit">Editar Horario</p>                
+                </div>        
+            </div>        
+            <mat-card>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxFlex="100" class="scheduleForm">            
+                            <form action=""  [formGroup]="FormSchedule" (ngSubmit)="onSubmit()">                            
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div fxFlex>
+                                        <mat-form-field>
+                                            <mat-label>Materia</mat-label>
+                                            <mat-select formControlName="subject">
+                                                <mat-option *ngFor="let subject of subjects" [value]="subject._id">
+                                                {{subject.name}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div fxFlex>
+                                        <mat-form-field>
+                                            <mat-label>Maestro</mat-label>
+                                            <mat-select formControlName="teacher">
+                                                <mat-option *ngFor="let teacher of teachers" [value]="teacher._id">
+                                                {{teacher.name}} {{teacher.surnameP}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>                                                               
+                                </div>   
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div fxFlex>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Dias</mat-label>
+                                            <input 
+                                            matInput
+                                            formControlName="days">
+                                            <mat-icon matSuffix>mode_edit</mat-icon>
+                                        </mat-form-field>
+                                    </div>                     
+                                    <div fxFlex>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Horario</mat-label>
+                                            <input 
+                                            matInput
+                                            formControlName="schedule">
+                                            <mat-icon matSuffix>mode_edit</mat-icon>
+                                        </mat-form-field>
+                                    </div>                    
+                                    <div fxFlex>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Salon</mat-label>
+                                            <input 
+                                            matInput
+                                            formControlName="classroom">
+                                            <mat-icon matSuffix>mode_edit</mat-icon>
+                                        </mat-form-field>
+                                    </div>                                               
+                                </div>    
+                                <div fxLayout="row" fxLayoutAlign="end center">
+                                    <div fxFlex="30">
+                                        <button 
+                                        mat-raised-button 
+                                        color="primary"
+                                        [disabled]="FormSchedule.invalid" 
+                                        style="width: 40%; margin-right: 5px;">Guardar</button>
+                                        <button 
+                                        mat-raised-button 
+                                        color="warn"                                    
+                                        style="width: 40%;" (click)="regresar()">Regresar</button>
+                                    </div>
                                 </div>
-                                <div fxFlex>
-                                    <mat-form-field>
-                                        <mat-label>Maestro</mat-label>
-                                        <mat-select formControlName="teacher">
-                                            <mat-option *ngFor="let teacher of teachers" [value]="teacher._id">
-                                            {{teacher.name}} {{teacher.surnameP}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>                                                               
-                            </div>   
-                            <div fxLayout="row" fxLayoutAlign="center center">
-                                <div fxFlex>
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>Dias</mat-label>
-                                        <input 
-                                        matInput
-                                        formControlName="days">
-                                        <mat-icon matSuffix>mode_edit</mat-icon>
-                                    </mat-form-field>
-                                </div>                     
-                                <div fxFlex>
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>Horario</mat-label>
-                                        <input 
-                                        matInput
-                                        formControlName="schedule">
-                                        <mat-icon matSuffix>mode_edit</mat-icon>
-                                    </mat-form-field>
-                                </div>                    
-                                <div fxFlex>
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>Salon</mat-label>
-                                        <input 
-                                        matInput
-                                        formControlName="classroom">
-                                        <mat-icon matSuffix>mode_edit</mat-icon>
-                                    </mat-form-field>
-                                </div>                                               
-                            </div>    
-                            <div fxLayout="row" fxLayoutAlign="end center">
-                                <div fxFlex="30">
-                                    <button 
-                                    mat-raised-button 
-                                    color="primary"
-                                    [disabled]="FormSchedule.invalid" 
-                                    style="width: 40%; margin-right: 5px;">Guardar</button>
-                                    <button 
-                                    mat-raised-button 
-                                    color="warn"                                    
-                                    style="width: 40%;" (click)="regresar()">Regresar</button>
-                                </div>
-                            </div>
-                        </form>            
+                            </form>            
+                    </div>
                 </div>
-            </div>
-        </mat-card>    
-  </div>  
-</div>
+            </mat-card>    
+        </div> 
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardModule } from '../dashboard/dashboard.module'
+import { SharedModule}from '../shared/shared.module'
 import { MaterialModule } from '../../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS , HttpClientModule } from '@angular/common/http'
@@ -16,7 +16,7 @@ import { EditSchedulesComponent } from './edit-schedules/edit-schedules.componen
   imports: [
     CommonModule,
     SchedulesRoutingModule,
-    DashboardModule,
+    SharedModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,19 +1,14 @@
- mat-toolbar
+mat-toolbar
 {    
     /* background-image: linear-gradient(120deg, #72afd3 0%, #66a6ff 100%); */    
     background-image: linear-gradient(120deg, #479dff 0%, #6cb0ff 100%);
-    /* background-color: rgb(7, 33, 70); */
-    
+    /* background-color: rgb(7, 33, 70); */    
 }
- img
+mat-toolbar mat-toolbar-row img
 {    
-    height: 70%;
+    height: 40px;
 }
 mat-toolbar-row button
 {
     color: white;
-}
-
-.spacer {
-    flex: 1 1 auto;
 }

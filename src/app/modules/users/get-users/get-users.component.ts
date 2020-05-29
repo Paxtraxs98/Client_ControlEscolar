@@ -52,7 +52,18 @@ export class GetUsersComponent implements OnInit {
       let idType=params['idTypeUser'];
       this._typeOfService.getTypeUSer(idType).subscribe(
         (response:any)=>{
-          this.tipo=response.getType.name          
+          // this.tipo=response.getType.name          
+          if(response.getType.name == 'Alumno'){
+            this.tipo='Alumnos'
+          }
+          else{
+              if(response.getType.name == 'Profesor'){
+                this.tipo='Profesores'
+              }
+              else{
+                this.tipo='Adminsitrativos'
+              }
+          }
         },error=>{
           console.log(error);
         }

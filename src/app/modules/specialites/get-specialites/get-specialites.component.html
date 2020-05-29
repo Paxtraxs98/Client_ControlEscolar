@@ -1,66 +1,66 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
-    <div fxFlex>
-      <app-dashboard-nav></app-dashboard-nav>
+<app-toolbar></app-toolbar>
+<mat-drawer-container>
+  <mat-drawer  mode="side" opened>
+    <app-options></app-options>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div fxFlex class="contenedor" *ngIf="identity.typeOfUsers.name=='Administrativo'"> 
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex class="title">
+              <p>Licenciaturas</p>  
+          </div>
+          <div fxFlex style="text-align: right;">
+            <button mat-raised-button class="bg-success text-white" [routerLink]="['AddSpecialite']" routerLinkActive="router-link-active" >Agregar <mat-icon>add</mat-icon></button>
+          </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex="90">
+            <mat-form-field>            
+              <input matInput (keyup)="applyFilter($event)" placeholder="Buscar Licenciatura">
+            </mat-form-field>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">            
+              <ng-container matColumnDef="nombre" >
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}}  </td>
+              </ng-container>            
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
+                <td mat-cell *matCellDef="let element"> 
+                  <div>
+                    <p *ngIf="element.status==true" style="color:green">
+                      Activo 
+                      <button *ngIf="element.status==true" mat-icon-button matTooltip="Dar de baja al Alumno" matTooltipPosition="right" (click)="bajaSpecialite(element._id)">                      
+                        <i class="fas fa-toggle-on"></i>
+                      </button>
+                    </p>
+                    <p *ngIf="element.status==false" style="color:red">
+                      Desactivado
+                      <button *ngIf="element.status==false" mat-icon-button matTooltip="Dar de alta al Alumno" matTooltipPosition="right" (click)="altaSpecialite(element._id)">                    
+                        <i class="fas fa-toggle-off"></i>
+                      </button>
+                    </p>                       
+                  </div>                
+                </td>
+              </ng-container>            
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Acciones </th>
+                <td mat-cell *matCellDef="let element"> 
+                  <div class="action">                                    
+                    <button mat-icon-button class="bg-warning text-white" [routerLink]="['EditSpecialite/',element._id]" routerLinkActive="router-link-active"  matTooltip="Editar" matTooltipPosition="right">
+                      <mat-icon>edit</mat-icon>
+                    </button>                                      
+                  </div>  
+                </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+      </div>
     </div>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex="17" class="menu">
-    <app-dashboard-menu></app-dashboard-menu>
-  </div>
-  <div fxFlex class="contenedor" *ngIf="identity.typeOfUsers.name=='Administrativo'"> 
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex class="title">
-            <p>Licenciaturas</p>  
-        </div>
-        <div fxFlex style="text-align: right;">
-          <button mat-raised-button class="bg-success text-white" [routerLink]="['AddSpecialite']" routerLinkActive="router-link-active" >Agregar Licenciatura</button>
-        </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="90">
-          <mat-form-field>            
-            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar Licenciatura">
-          </mat-form-field>
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">            
-            <ng-container matColumnDef="nombre" >
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}}  </td>
-            </ng-container>            
-            <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
-              <td mat-cell *matCellDef="let element"> 
-                <div>
-                  <p *ngIf="element.status==true" style="color:green">
-                    Activo 
-                    <button *ngIf="element.status==true" mat-icon-button matTooltip="Dar de baja al Alumno" matTooltipPosition="right" (click)="bajaSpecialite(element._id)">                      
-                      <i class="fas fa-toggle-on"></i>
-                    </button>
-                  </p>
-                  <p *ngIf="element.status==false" style="color:red">
-                    Desactivado
-                    <button *ngIf="element.status==false" mat-icon-button matTooltip="Dar de alta al Alumno" matTooltipPosition="right" (click)="altaSpecialite(element._id)">                    
-                      <i class="fas fa-toggle-off"></i>
-                    </button>
-                  </p>                       
-                </div>                
-              </td>
-            </ng-container>            
-            <ng-container matColumnDef="action">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Acciones </th>
-              <td mat-cell *matCellDef="let element"> 
-                <div class="action">                                    
-                  <button mat-raised-button class="bg-primary text-white" [routerLink]="['EditSpecialite/',element._id]" routerLinkActive="router-link-active" >Editar</button>                                      
-                </div>  
-              </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-        </div>
-    </div>
-  </div>
-  <div fxFlex class="contenedor" *ngIf="identity.typeOfUsers.name!='Administrativo'">
-    No tienes los privilegios suficientes
-  </div>  
-</div>
+    <div fxFlex class="contenedor" *ngIf="identity.typeOfUsers.name!='Administrativo'">
+      No tienes los privilegios suficientes
+    </div>  
+  </mat-drawer-content>
+</mat-drawer-container>

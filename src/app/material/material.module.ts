@@ -18,9 +18,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import {MatTreeModule} from '@angular/material/tree'; 
+import {MatSidenavModule} from '@angular/material/sidenav'; 
 
 const materialAngular = [
   FlexLayoutModule,
+  MatSidenavModule,
   MatInputModule,
   MatCheckboxModule,
   MatButtonModule,

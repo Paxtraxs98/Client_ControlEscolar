@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
+<!-- <div fxLayout="row" fxLayoutAlign="center center" class="toolbar">
     <div fxFlex>
       <app-dashboard-nav></app-dashboard-nav>
     </div>
@@ -10,4 +10,13 @@
   <div fxFlex> 
     homes
   </div>
-</div>
+</div> -->
+<app-toolbar></app-toolbar>
+<mat-drawer-container>
+  <mat-drawer  mode="side" opened>
+    <app-options></app-options>
+  </mat-drawer>
+  <mat-drawer-content>
+    incio
+  </mat-drawer-content>
+</mat-drawer-container>

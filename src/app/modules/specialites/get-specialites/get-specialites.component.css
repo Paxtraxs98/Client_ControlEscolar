@@ -1,4 +1,9 @@
-
+mat-drawer{
+    width: 270px;
+}
+mat-drawer-container{
+    height: 89%;
+}
 .contenedor
 {
     padding: 30px;

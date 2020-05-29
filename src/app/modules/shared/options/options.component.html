@@ -1,0 +1,34 @@
+<mat-nav-list>        
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard']" routerLinkActive="router-link-active">
+        <i class="fas fa-house-user" mat-list-icon></i>                    
+        <div mat-line>Inicio</div>       
+    </a>                                      
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard/User/',alumno]" routerLinkActive="router-link-active" >
+        <i class="fas fa-user-graduate" mat-list-icon></i>                  
+        <div mat-line>Alumnos</div>                  
+    </a>                                    
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard/User/',profesor]" routerLinkActive="router-link-active">
+        <i class="fas fa-chalkboard-teacher" mat-list-icon></i>                  
+        <div mat-line>Profesores</div>                  
+    </a>
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard/User/',administrativo]" routerLinkActive="router-link-active">
+        <i class="fas fa-briefcase" mat-list-icon></i>                  
+        <div mat-line>Administrativos</div>                  
+    </a>                           
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard/Subjects']" routerLinkActive="router-link-active" >
+        <i class="fas fa-book" mat-list-icon></i>
+        <div mat-line>Materias</div>                  
+    </a>
+    <a mat-list-item [routerLink]="['/portal-ISIMA/Dashboard/Specialites']" routerLinkActive="router-link-active" >
+        <i class="fas fa-microscope" mat-list-icon></i>
+        <div mat-line>Licenciaturas</div>                  
+    </a>    
+    <a mat-list-item [routerLink] ="['/portal-ISIMA/Dashboard/Schedules']">
+        <i class="fas fa-clock"  mat-list-icon></i>
+        <div mat-line>Agregar Horarios</div>                  
+    </a>                 
+    <a mat-list-item [routerLink] ="['/portal-ISIMA/Dashboard/Schedules']">
+        <i class="fas fa-user-clock"  mat-list-icon></i>                    
+        <div mat-line>Mi Horario</div>                  
+    </a>
+</mat-nav-list>

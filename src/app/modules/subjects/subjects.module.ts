@@ -4,9 +4,9 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { MaterialModule } from '../../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS , HttpClientModule } from '@angular/common/http'
-import { TokenInterceptorService } from '../../services/system/token-interceptor.service'
 
 
+import { SharedModule}from '../shared/shared.module'
 import { SubjectsRoutingModule } from './subjects-routing.module';
 import { GetSubjectsComponent } from './get-subjects/get-subjects.component';
 import { AddSubjectsComponent } from './add-subjects/add-subjects.component';
@@ -18,16 +18,11 @@ import { EditSubjectsComponent } from './edit-subjects/edit-subjects.component';
   imports: [
     CommonModule,
     SubjectsRoutingModule,
-    DashboardModule,
+    SharedModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide : HTTP_INTERCEPTORS,
-    useClass : TokenInterceptorService,
-    multi : true
-  }],
 })
 export class SubjectsModule { }
